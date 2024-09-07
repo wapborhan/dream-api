@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Page</title>
+    <link
+      type="image/png"
+      sizes="16x16"
+      rel="shortcut icon"
+      href="./favicon.png"
+    />
+    <link type="image/png" sizes="32x32" rel="icon" href="./favicon-32.png" />
+    <link type="image/png" sizes="96x96" rel="icon" href="./favicon-96.png" />
+    <link
+      type="image/png"
+      sizes="120x120"
+      rel="icon"
+      href="./favicon-120.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Error: <%= errorMessage %> <br /><br />Status: <%= statusCode %></h1>
+      <!-- <% if (stackTrace) { %>
+    <pre><%= stackTrace %></pre>
+    <% } else { %>
+    <p>No additional error details are available.</p>
+    <% } %> -->
+      <a href="/">Homepage</a>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "express-mongoose-starter",
+  "version": "1.0.0",
+  "description": "Node",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wapborhan/node-express-mongoose-starter.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Borhan Uddin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wapborhan/node-express-mongoose-starter/issues"
+  },
+  "homepage": "https://github.com/wapborhan/node-express-mongoose-starter#readme",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.5"
+  }
+}
