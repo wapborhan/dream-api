@@ -2,17 +2,26 @@ const { model, Schema } = require("mongoose");
 
 const UserSchema = new Schema(
   {
-    username: { type: String, required: true },
+    username: { type: String },
     email: { type: String, required: true },
-    name: { type: String, required: true },
-    photoUrl: { type: String, required: true },
+    name: { type: String },
+    photoUrl: { type: String },
+    accountType: { type: String, required: true },
+    companyName: { type: String },
     address: { type: String },
     bio: { type: String },
-    links: { type: Object },
-    profileLikes: { type: Array },
-    profileViews: { type: Array },
+    socialLinks: {
+      facebook: { type: String },
+      twitter: { type: String },
+      linkedin: { type: String },
+      github: { type: String },
+    },
+    userType: { type: String },
   },
-  { versionKey: false }
+  {
+    versionKey: false,
+    timestamps: true,
+  },
 );
 
 const Users = model("users", UserSchema);

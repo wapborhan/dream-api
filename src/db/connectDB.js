@@ -6,16 +6,16 @@ const getConnectionString = () => {
 
   if (process.env.NODE_ENV === "development") {
     connectionUrl = process.env.DATABASE_LOCAL;
+  } else {
+    connectionUrl = process.env.DATABASE_PROD;
     connectionUrl = connectionUrl.replace(
       "<username>",
-      process.env.DATABASE_LOCAL_USERNAME
+      process.env.DATABASE_LOCAL_USERNAME,
     );
     connectionUrl = connectionUrl.replace(
       "<password>",
-      process.env.DATABASE_LOCAL_PASSWORD
+      process.env.DATABASE_LOCAL_PASSWORD,
     );
-  } else {
-    connectionUrl = process.env.DATABASE_PROD;
   }
 
   return connectionUrl;

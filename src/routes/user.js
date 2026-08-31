@@ -1,4 +1,5 @@
 const router = require("express").Router();
+
 const {
   getAllUsers,
   createUsers,
@@ -6,10 +7,15 @@ const {
   editSingleUser,
 } = require("../controllers/users");
 
+const verifyToken = require("../middlewares/auth");
+// Protect everything inside this router
+
+// router.use(verifyToken);
+
 router
-  .get("/users", getAllUsers)
-  .post("/users", createUsers)
-  .get("/user/:username", getSingleUser)
-  .put("/user/:username", editSingleUser);
+  .get("/", getAllUsers)
+  .post("/", createUsers)
+  .get("/:username", getSingleUser)
+  .put("/:username", editSingleUser);
 
 module.exports = router;

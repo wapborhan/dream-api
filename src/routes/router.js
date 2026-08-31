@@ -1,14 +1,16 @@
 const userRouter = require("./user");
+const authRouter = require("./auth");
+const JobsRouter = require("./jobs");
+
 const routers = [
-  {
-    path: "/",
-    handler: userRouter,
-  },
+  ["/users", userRouter],
+  ["/auth", authRouter],
+  ["/srjobs", JobsRouter],
 ];
 
 const applyRouter = (app) => {
-  routers.map((r) => {
-    app.use(r.path, r.handler);
+  routers.forEach(([path, router]) => {
+    app.use(`/v1${path}`, router);
   });
 };
 

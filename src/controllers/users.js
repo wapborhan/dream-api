@@ -3,7 +3,7 @@ const Users = require("../models/Users");
 
 // Get Request
 const getAllUsers = asyncWrapper(async (req, res) => {
-  // const result = await Users.find({});
+  const result = await Users.find({});
   res.send("result");
 });
 
@@ -51,7 +51,7 @@ const editSingleUser = asyncWrapper(async (req, res) => {
     // Find the user by username and update their links field
     const updatedUser = await Users.findOneAndUpdate(
       { username: username },
-      { links: newLinks, bio: newBio, address: newAddress }
+      { links: newLinks, bio: newBio, address: newAddress },
     );
     if (!updatedUser) {
       return res.status(404).send({ message: "User not found" });

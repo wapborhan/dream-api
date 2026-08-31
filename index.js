@@ -8,8 +8,9 @@ const port = process.env.PORT;
 const main = async () => {
   await connectDB();
   server.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-    console.log(`Following link http://localhost:${port}`);
+    console.log(
+      `Server is running on port ${port}, Following link http://localhost:${port}`,
+    );
   });
 };
 main();
